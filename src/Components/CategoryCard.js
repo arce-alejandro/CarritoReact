@@ -1,25 +1,21 @@
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 
 function CategoryCard(props, { children }) {
   return (
-    <Card style={{ width: '20rem' }}>
+    <Card style={{ width: '300px', height: '350px' }}>
 
-      <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to={`productos/${props.categoria}`}>
-        <Card.Img variant="top" src={props.image} />
-      </Link>
-
-      <Card.Body>
-        <Card.Title >{props.title}</Card.Title>
-        <Card.Text>
-          {props.description}
-        </Card.Text>
-        <Col>{props.children}</Col>
-      </Card.Body>
-
+        <Col style={{ width: '100%', height: '250px' }} ><Card.Img variant="top" src={props.image} /></Col>
+      <Col>
+        <Card.Body>
+          <Card.Title >{props.title}</Card.Title>
+          <Card.Text>
+            {props.description}
+          </Card.Text>
+          <Col>{props.children}</Col>
+        </Card.Body>
+</Col>
 
 
     </Card>

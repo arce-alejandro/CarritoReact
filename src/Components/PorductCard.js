@@ -1,19 +1,16 @@
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 
 function ProductCard(props, { children }) {
   return (
 
-    <Row xs={1} md={4} className="g-4">
-    <Card style={{ width: '300px' , height: 'Auto'}} className="text-center">
+    <Row xs={1} md={4} className="g-3">
+    <Card style={{ width: '200px' , height: '450px'}} className="text-center">
 
-      <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to={`productos/${props.categoria}`}>
-        <Col style={{ width: '100%' , height: 'Auto'}} ><Card.Img variant="top" src={props.image} /></Col>
-      </Link>
-
+        <Col style={{ width: '100%' , height: '150px'}} ><Card.Img variant="top" src={props.image} /></Col>
+      
+    <Col>
       <Card.Body>
         <Card.Title >{props.title}</Card.Title>
         <Card.Text>
@@ -24,7 +21,7 @@ function ProductCard(props, { children }) {
         {props.children}
        
         </Card.Text>
-      </Card.Body>
+      </Card.Body></Col>
 
 
 

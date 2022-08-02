@@ -30,8 +30,8 @@ function FormularioProducto(props) {
         fetch(`${urlBase}productos/guardar`, requestOptions)
             .then(() => {
                 console.log(productos)
-                setShow(true)
                 console.log("Categoria creada")
+                setShow(true)
                 
 
             })

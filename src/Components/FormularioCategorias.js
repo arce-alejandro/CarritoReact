@@ -22,15 +22,16 @@ function FormularioCategorias() {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify( categoria )
-  };
+      body: JSON.stringify(categoria)
+    };
 
 
-    fetch(`${urlBase}categorias/guardar`,requestOptions)
-    .then(() => {
-      console.log(categoria)
-      console.log("Categoria creada")
-    })
+    fetch(`${urlBase}categorias/guardar`, requestOptions)
+      .then(() => {
+        console.log(categoria)
+        console.log("Categoria creada")
+      })
+      setShow(true)
   }
 
   return (
@@ -55,11 +56,11 @@ function FormularioCategorias() {
         />
         Copia y pega la URL de la imagen deseada
       </Form.Group>
-      { show && 
-      <Alert variant="success" onClose={() => setShow(false)} dismissible>
-        <Alert.Heading>Producto Guardado con exito</Alert.Heading>
-        
-      </Alert>}
+      {show &&
+        <Alert variant="success" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading>Producto Guardado con exito</Alert.Heading>
+
+        </Alert>}
 
       <Button variant="primary" type="submit">
         Guardar

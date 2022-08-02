@@ -29,7 +29,7 @@ function Categorias(props) {
 
 
   useEffect(() => {
-    fetch(`${urlBase}categorias/buscartodos`)
+    fetch(`${urlBase}carrito/buscartodos`)
       .then(res => res.json())
       .then(res => setListaCategorias(res.data))
 
@@ -41,14 +41,10 @@ function Categorias(props) {
       method: 'DELETE'
     })
       .then(res => res.json())
-      .then(res => setListaCategorias(res.data))
-    console.warn()
+      .then(res => (res.data))
+      console.warn()
 
   }
-
-
-
-
   return (
     <div>
       <main>
@@ -56,13 +52,12 @@ function Categorias(props) {
         <br />
         <Button onClick={() => setModalShow(true)} className="btn-success">Agregar Categoria</Button>
         <br />
-        <br />
         <Container>
 
           <Modal
             show={modalShow}
             onHide={() => setModalShow(false)}
-          ><Formulario /></Modal>
+          ><Formulario/></Modal>
           {listaCategorias && <Container>
             <Row className="justify-content-center align-items-center">
               {listaCategorias.map((categoria) => (
@@ -78,10 +73,15 @@ function Categorias(props) {
                       <Col md={6}>
                         <Button className="btn-info" onClick={() => setModalShow(true)}>Editar</Button>
                       </Col>
-
+                      
                       <Col md={6}>
-                        <Button className="btn-danger" onClick={() => eliminarCategoria(categoria.id)}>Eliminar</Button>
+                        <Button className="btn-danger"onClick={() => eliminarCategoria(categoria.id)}>Eliminar</Button>
                       </Col>
+                      
+
+
+
+
                     </Row>
                   </CategoryCard>
                   <br />

@@ -37,6 +37,17 @@ function Productos(children) {
     console.log(listaProductos)
   }, [listaProductos]);
 
+
+  function eliminarProducto(id) {
+    fetch(`${urlBase}productos/eliminar/${id}`, {
+      method: 'DELETE'
+    })
+      .then(res => res.json())
+      .then(res => setListaProductos(res.data))
+      console.warn()
+    
+  }
+
   return (
     <div>
       <main>
@@ -70,7 +81,7 @@ function Productos(children) {
                       <br/>
                       <Container md={4} mb={3}> <Button className="btn-info" size="sm" onClick={() => setModalShow(true)}>Editar</Button></Container>
                       <br/>
-                      <Container md={6} ><Button className="btn-danger" size="sm">Eliminar</Button></Container>                          
+                      <Container md={6} ><Button className="btn-danger" size="sm" onClick={()=> eliminarProducto(producto.id) }>Eliminar</Button></Container>                          
                         
                     </Stack>
                   </ProductCard>

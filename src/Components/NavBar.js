@@ -14,7 +14,7 @@ function NavBar(props) {
           <Nav className="me-auto">
         <Container mr="6" ><Link to={"/categorias"}><Button variant="outline-info">Categorias</Button></Link> </Container>
           
-          <Container ><Link to={"/productos"}><Button variant="outline-primary">Porductos</Button></Link> </Container>
+          <Container ><Link to={"/productos"}><Button variant="outline-primary">Productos</Button></Link> </Container>
           </Nav>
           <Nav>
           <Container className="d-flex"><Link to="/carrito"><Button variant="outline-warning">Carrrito</Button></Link></Container>  
